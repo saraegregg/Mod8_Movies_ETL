@@ -32,6 +32,7 @@ AmazingPrime Video, a platform for streaming movies and TV shows online, wants t
 In the  course of completing the challenge, I used code written throughout the module and refactored it in four main steps.
 
 First I wrote a function named extract_transform_load() that would read the three data files and convert them to DataFrames.
+
 ![challenge_step_1.png](https://github.com/saraegregg/Mod8_Movies_ETL/blob/main/resources/challenge_step_1.png)
 
 The second step is to clean the Wikipedia data. I added the clean movie function from the module and added to the  extract_transform_load() function steps to do the following cleaning tasks:
@@ -41,10 +42,12 @@ The second step is to clean the Wikipedia data. I added the clean movie function
 - convert data to strings and select the useful information from them using regular expressions
 - convert datatypes for the box office, budget, release date, and running time columns
 The resulting product is a clean DataFrame.
+
 ![challenge_step_2.png](https://github.com/saraegregg/Mod8_Movies_ETL/blob/main/resources/challenge_step_2.png)
 
 Afterwards, I focused on cleaning the Kaggle data. I merged the Kaggle and Wiki Movies DataFrames and dropped unnecessary columns from the resulting DataFrame, movies_df. I then dropped unnecessary columns and added the function I wrote in the module to fill any data missing from the Kaggle set in the movies_df DataFrame. I filtered it to keep the columns I needed and renamed them. Then I cleaned the ratings counts, merged it with movies_df, and assigned the value of zero to any null values in a rating category.
 
 Finally, I created the Movie Database in PostgressSQL, making sure that any data that was in the database's movies table is replaced by the new data, and it correctly imports the MovieLens ratings.
+
 ![movies_query.png](https://github.com/saraegregg/Mod8_Movies_ETL/blob/main/resources/movies_query.png)
 ![ratings_query.png](https://github.com/saraegregg/Mod8_Movies_ETL/blob/main/resources/ratings_query.png)
