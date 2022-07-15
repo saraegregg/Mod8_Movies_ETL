@@ -1,4 +1,3 @@
-# Module 8 Challenge
 
 ---
 ## ETL:Extract, Transform, Load
